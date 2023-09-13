@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuP-ET-9zk" userLabel="HangmanDesign">
+                                <rect key="frame" x="37.333333333333343" y="82" width="318.33333333333326" height="323"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vertical-line" translatesAutoresizingMaskIntoConstraints="NO" id="A6A-YH-VRg" userLabel="rope">
+                                        <rect key="frame" x="135" y="0.0" width="48" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="FVa-kc-9hP" userLabel="face">
+                                        <rect key="frame" x="99" y="50" width="120" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="straight-line" translatesAutoresizingMaskIntoConstraints="NO" id="cpr-V9-rJH" userLabel="body">
+                                        <rect key="frame" x="39" y="109" width="241" height="145"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="diagonal-line" translatesAutoresizingMaskIntoConstraints="NO" id="9CO-9v-nwa" userLabel="right-hand">
+                                        <rect key="frame" x="154" y="99" width="71" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="diagonal-line-reverse" translatesAutoresizingMaskIntoConstraints="NO" id="fbe-9z-IsM" userLabel="left-hand">
+                                        <rect key="frame" x="94" y="99" width="71" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="diagonal-line" translatesAutoresizingMaskIntoConstraints="NO" id="ksx-X9-Fip" userLabel="left-leg">
+                                        <rect key="frame" x="94" y="248" width="71" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="diagonal-line-reverse" translatesAutoresizingMaskIntoConstraints="NO" id="3IO-45-MbH" userLabel="right-leg">
+                                        <rect key="frame" x="154" y="248" width="71" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" name="AccentColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1L9-ut-RGX" userLabel="WordArea">
+                                <rect key="frame" x="37" y="521" width="319" height="115"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="center" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iNK-Pb-UCm">
+                                        <rect key="frame" x="0.0" y="40" width="319" height="35"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZb-jo-gbk" userLabel="char">
+                                                <rect key="frame" x="10" y="0.0" width="34" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QZ-Ih-sg8" userLabel="char">
+                                                <rect key="frame" x="54" y="0.0" width="34.333333333333343" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwb-y6-wDZ" userLabel="char">
+                                                <rect key="frame" x="98.333333333333343" y="0.0" width="34" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNn-rU-0Eo" userLabel="char">
+                                                <rect key="frame" x="142.33333333333334" y="0.0" width="34.333333333333343" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yE-58-n17" userLabel="char">
+                                                <rect key="frame" x="186.66666666666666" y="0.0" width="34" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3c-ui-g0U" userLabel="char">
+                                                <rect key="frame" x="230.66666666666669" y="0.0" width="34.333333333333314" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uwf-Rq-JWm" userLabel="char">
+                                                <rect key="frame" x="275" y="0.0" width="34" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="iYm-qp-x7J"/>
+                                        </constraints>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="10" bottom="0.0" trailing="10"/>
+                                    </stackView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="UyD-VZ-gYS"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstItem="UyD-VZ-gYS" firstAttribute="bottom" secondItem="iNK-Pb-UCm" secondAttribute="bottom" constant="40" id="5Ks-ht-E0D"/>
+                                    <constraint firstAttribute="width" priority="999" constant="319" id="LJF-3N-3bD"/>
+                                    <constraint firstAttribute="height" constant="115" id="Nrm-ga-p1X"/>
+                                    <constraint firstItem="iNK-Pb-UCm" firstAttribute="leading" secondItem="UyD-VZ-gYS" secondAttribute="leading" id="PBx-mM-8uJ"/>
+                                    <constraint firstItem="iNK-Pb-UCm" firstAttribute="trailing" secondItem="UyD-VZ-gYS" secondAttribute="trailing" id="S18-pF-7nU"/>
+                                    <constraint firstItem="iNK-Pb-UCm" firstAttribute="top" secondItem="UyD-VZ-gYS" secondAttribute="top" constant="40" id="l1P-h1-1g5"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Dpy-4D-quI" userLabel="second-line">
+                                <rect key="frame" x="53.666666666666657" y="700.66666666666663" width="286" height="27"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdX-gN-ogg" userLabel="Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="A"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MlP-R2-T48"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oe-3E-jcM" userLabel="Q">
+                                        <rect key="frame" x="32.000000000000007" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="S"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qRf-bd-Zae"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byl-h3-UNi" userLabel="Q">
+                                        <rect key="frame" x="64" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="D"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RCN-Te-9SJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvv-kF-qgd" userLabel="Q">
+                                        <rect key="frame" x="96" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="F"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XKX-nn-u8J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAJ-dS-vZE" userLabel="Q">
+                                        <rect key="frame" x="128" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="G"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uf2-48-eIq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGI-U6-yMg" userLabel="Q">
+                                        <rect key="frame" x="160" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="H"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gTv-EB-oiJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23d-zV-8fE" userLabel="Q">
+                                        <rect key="frame" x="192" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="J"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IeZ-03-nFP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcu-8r-1j2" userLabel="Q">
+                                        <rect key="frame" x="224.00000000000003" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="K"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lkn-PM-Ca6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gc1-da-XHb" userLabel="Q">
+                                        <rect key="frame" x="256" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="L"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C5r-6W-7i2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="4Sd-9n-Xjt"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ka9-Pi-9M7" userLabel="third-line">
+                                <rect key="frame" x="70.666666666666686" y="747.66666666666663" width="252" height="27"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TmV-fI-tZr" userLabel="Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Z"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H38-6f-c1b"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yni-UD-kQm" userLabel="Q">
+                                        <rect key="frame" x="37" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="X"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xzX-ZH-1Ha"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9us-Uy-bPz" userLabel="Q">
+                                        <rect key="frame" x="73.999999999999986" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="C"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKB-8t-2fZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yS0-c8-6Ib" userLabel="Q">
+                                        <rect key="frame" x="110.99999999999999" y="0.0" width="30.000000000000014" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="V"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PiH-63-NZf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvR-Xp-bOC" userLabel="Q">
+                                        <rect key="frame" x="148" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="B"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LPU-aV-8i3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi2-0c-qhW" userLabel="Q">
+                                        <rect key="frame" x="185" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="N"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7RW-Wr-o6i"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qd8-NA-TcQ" userLabel="Q">
+                                        <rect key="frame" x="222" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="M"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zJB-dP-fct"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="OPq-nK-dQn"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7V-c4-Qqm" userLabel="Score">
+                                <rect key="frame" x="37.333333333333343" y="421" width="318.33333333333326" height="84"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="WINS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpc-64-JBc">
+                                        <rect key="frame" x="7" y="55.000000000000007" width="51" height="20.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nd-1m-Z9i">
+                                        <rect key="frame" x="60.999999999999993" y="55.000000000000007" width="10.333333333333336" height="20.333333333333336"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10.333333333333343" id="F2M-jW-dOR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Sh-CP-2j1">
+                                        <rect key="frame" x="297.33333333333337" y="54.000000000000007" width="12" height="20.333333333333336"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="lOx-fo-z1C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOSSES:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7S-cy-iRn">
+                                        <rect key="frame" x="223.33333333333334" y="54.000000000000007" width="71.333333333333343" height="20.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7B-e7-98a">
+                                        <rect key="frame" x="211" y="0.0" width="52" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="TIMER: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IG-3r-z6Z">
+                                        <rect key="frame" x="49" y="0.0" width="138" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="8Sh-CP-2j1" firstAttribute="leading" secondItem="g7S-cy-iRn" secondAttribute="trailing" constant="2.6666666666666288" id="12U-JF-LVQ"/>
+                                    <constraint firstItem="h7B-e7-98a" firstAttribute="baseline" secondItem="8IG-3r-z6Z" secondAttribute="firstBaseline" id="28P-BR-UQc"/>
+                                    <constraint firstItem="5nd-1m-Z9i" firstAttribute="leading" secondItem="fpc-64-JBc" secondAttribute="trailing" constant="3.0000000000000071" id="A0s-og-o06"/>
+                                    <constraint firstAttribute="bottom" secondItem="5nd-1m-Z9i" secondAttribute="bottom" constant="8.6699999999999999" id="MO5-d9-WaO"/>
+                                    <constraint firstItem="h7B-e7-98a" firstAttribute="leading" secondItem="8IG-3r-z6Z" secondAttribute="trailing" constant="24" id="PCK-Ux-iK9"/>
+                                    <constraint firstAttribute="bottom" secondItem="fpc-64-JBc" secondAttribute="bottom" constant="8.6666666666666572" id="Q7V-LM-Epk"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="h7B-e7-98a" secondAttribute="trailing" constant="20" symbolic="YES" id="QjV-Rt-PCM"/>
+                                    <constraint firstItem="fpc-64-JBc" firstAttribute="leading" secondItem="G7V-c4-Qqm" secondAttribute="leading" constant="7" id="TpM-Ee-Ky3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="318" id="Tqm-Z7-Zku"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Sh-CP-2j1" secondAttribute="trailing" constant="9" id="VqO-rF-CMH"/>
+                                    <constraint firstItem="fpc-64-JBc" firstAttribute="top" secondItem="G7V-c4-Qqm" secondAttribute="top" constant="55" id="bcG-th-AfA"/>
+                                    <constraint firstItem="8IG-3r-z6Z" firstAttribute="leading" secondItem="G7V-c4-Qqm" secondAttribute="leading" constant="49" id="dYp-Z9-8kb"/>
+                                    <constraint firstAttribute="bottom" secondItem="g7S-cy-iRn" secondAttribute="bottom" constant="9.6666666666666572" id="hrZ-du-aH0"/>
+                                    <constraint firstItem="g7S-cy-iRn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5nd-1m-Z9i" secondAttribute="trailing" constant="8" symbolic="YES" id="ibq-nZ-WlO"/>
+                                    <constraint firstItem="8Sh-CP-2j1" firstAttribute="centerY" secondItem="g7S-cy-iRn" secondAttribute="centerY" id="kI5-qo-vqO"/>
+                                    <constraint firstItem="8Sh-CP-2j1" firstAttribute="firstBaseline" secondItem="g7S-cy-iRn" secondAttribute="firstBaseline" id="lKX-Nv-v81"/>
+                                    <constraint firstItem="8IG-3r-z6Z" firstAttribute="top" secondItem="G7V-c4-Qqm" secondAttribute="top" id="s6z-3O-eSn"/>
+                                    <constraint firstItem="g7S-cy-iRn" firstAttribute="top" secondItem="h7B-e7-98a" secondAttribute="bottom" constant="6" id="utc-S1-a0H"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="q8a-Nd-yqV" userLabel="first-line">
+                                <rect key="frame" x="24" y="653" width="345" height="27"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6E-6z-iuN" userLabel="Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Q">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IR4-sO-94K"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diJ-md-Jxk" userLabel="Q">
+                                        <rect key="frame" x="35" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="W"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SUK-Sd-zLM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRa-eM-0NQ" userLabel="Q">
+                                        <rect key="frame" x="70" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="E"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TOP-eE-yR1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZrM-my-gfF" userLabel="Q">
+                                        <rect key="frame" x="105" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="R"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOV-a5-NVe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIF-ht-RVB" userLabel="Q">
+                                        <rect key="frame" x="140" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="T"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hZ8-tG-OeS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztf-gb-4Il" userLabel="Q">
+                                        <rect key="frame" x="175" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Y"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B53-Is-1Nw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdM-vT-tTD" userLabel="Q">
+                                        <rect key="frame" x="210" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="U"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aGg-EH-h85"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXp-7q-B3U" userLabel="Q">
+                                        <rect key="frame" x="245" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="I"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aaw-aL-OJv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLh-Qs-D0y" userLabel="Q">
+                                        <rect key="frame" x="280" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="O"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mf6-1Q-nus"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPa-NH-f0a" userLabel="Q">
+                                        <rect key="frame" x="315" y="0.0" width="30" height="27"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="P"/>
+                                        <connections>
+                                            <action selector="onKeyboardKeyPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gia-Ua-iQl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="h9Y-Zo-f4B"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dpy-4D-quI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dfa-ZZ-mm8"/>
+                            <constraint firstItem="q8a-Nd-yqV" firstAttribute="top" secondItem="1L9-ut-RGX" secondAttribute="bottom" constant="17" id="GbU-Up-15D"/>
+                            <constraint firstItem="1L9-ut-RGX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MRu-R5-7SB"/>
+                            <constraint firstAttribute="bottom" secondItem="JuP-ET-9zk" secondAttribute="bottom" constant="447" id="NZb-GT-qEN"/>
+                            <constraint firstItem="JuP-ET-9zk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="Rlh-1Z-0qY"/>
+                            <constraint firstItem="q8a-Nd-yqV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T67-Rf-DfR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ka9-Pi-9M7" secondAttribute="bottom" constant="43.329999999999998" id="TP7-4W-MHW"/>
+                            <constraint firstItem="Dpy-4D-quI" firstAttribute="top" secondItem="q8a-Nd-yqV" secondAttribute="bottom" constant="20.666666666666629" id="aUO-po-DsD"/>
+                            <constraint firstItem="G7V-c4-Qqm" firstAttribute="top" secondItem="JuP-ET-9zk" secondAttribute="bottom" constant="16" id="eHt-x4-ccL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JuP-ET-9zk" secondAttribute="trailing" constant="37.333333333333371" id="egM-Ih-1Z9"/>
+                            <constraint firstItem="JuP-ET-9zk" firstAttribute="centerX" secondItem="G7V-c4-Qqm" secondAttribute="centerX" id="icz-7U-4j8"/>
+                            <constraint firstItem="G7V-c4-Qqm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j9g-WB-h9E"/>
+                            <constraint firstItem="JuP-ET-9zk" firstAttribute="trailing" secondItem="G7V-c4-Qqm" secondAttribute="trailing" id="lpb-c2-Xuy"/>
+                            <constraint firstItem="1L9-ut-RGX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="ms9-az-qFb"/>
+                            <constraint firstItem="ka9-Pi-9M7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uZO-iX-uHx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1L9-ut-RGX" secondAttribute="trailing" constant="37" id="vAO-Di-8BX"/>
+                            <constraint firstItem="ka9-Pi-9M7" firstAttribute="top" secondItem="Dpy-4D-quI" secondAttribute="bottom" constant="20" id="wIB-1i-Tf4"/>
+                            <constraint firstItem="1L9-ut-RGX" firstAttribute="top" secondItem="G7V-c4-Qqm" secondAttribute="bottom" constant="16" id="zSs-cr-5pX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lossesCount" destination="8Sh-CP-2j1" id="s4D-hL-U4F"/>
+                        <outlet property="manBody" destination="cpr-V9-rJH" id="ppc-DC-t9l"/>
+                        <outlet property="manFace" destination="FVa-kc-9hP" id="ake-dx-IGB"/>
+                        <outlet property="manLeftHand" destination="fbe-9z-IsM" id="hZR-TE-yMt"/>
+                        <outlet property="manLeftLeg" destination="ksx-X9-Fip" id="fxw-D1-80k"/>
+                        <outlet property="manRightHand" destination="9CO-9v-nwa" id="N8M-A2-Hno"/>
+                        <outlet property="manRightLeg" destination="3IO-45-MbH" id="oeh-Zw-Wrd"/>
+                        <outlet property="positionFifth" destination="5yE-58-n17" id="fHe-gi-Mil"/>
+                        <outlet property="positionFirst" destination="UZb-jo-gbk" id="Mmr-tS-Pyr"/>
+                        <outlet property="positionFourth" destination="CNn-rU-0Eo" id="5An-br-w8n"/>
+                        <outlet property="positionSecond" destination="4QZ-Ih-sg8" id="8fp-TY-1Bb"/>
+                        <outlet property="positionSeventh" destination="uwf-Rq-JWm" id="RMy-jW-cdM"/>
+                        <outlet property="positionSixth" destination="n3c-ui-g0U" id="rce-Wh-R9W"/>
+                        <outlet property="positionThird" destination="cwb-y6-wDZ" id="6Hn-Xr-GCU"/>
+                        <outlet property="timeCounter" destination="h7B-e7-98a" id="oCZ-9v-Vle"/>
+                        <outlet property="winsCount" destination="5nd-1m-Z9i" id="lTq-jh-a9I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-95.419847328244273" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circle" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="diagonal-line" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="diagonal-line-reverse" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="straight-line" width="200" height="200"/>
+        <image name="vertical-line" width="170.66667175292969" height="170.66667175292969"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
